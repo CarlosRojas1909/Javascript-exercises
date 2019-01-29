@@ -22,4 +22,93 @@ This is my 3 loop, I am j:2
 I am b in 2 loop: 2
 This is my 3 loop, I am i:2
 I am b in 3 loop: 3
+
+
 */
+// Solution Exercise #1;
+var arr = [2, 7, 11, 15], targ = 9;
+
+
+    //Option Solution 1
+
+
+        var twoSum1 = function(nums, target) {
+
+            var result = [];
+
+            for(var i = 0; i < nums.length; i++) {
+                // console.log(nums[i])
+                for(var j = i + 1; j < nums.length; j++) {
+
+                    if(nums[i] + nums[j] === target) {
+
+                        result.push(i)
+                        result.push(j)
+
+                    }
+                }
+            }
+            console.log(result);
+
+        };
+
+        twoSum1(arr, targ)
+
+
+
+    //Option Solution 2
+
+        var twoSum2 = function(nums, target) {
+
+            var arr =[], item, itemIndex;
+
+        nums.forEach(function (el, index) {
+
+            item = target - el; //9-2=7 find if the index of this number exist in the array through its index, even if item gets negative number the if statement will take care of it
+            itemIndex = nums.indexOf(item)//if can't item doesn't exist in arr. return -1
+            
+            if(itemIndex > 0 && itemIndex !== index ) {
+
+                arr.push(index)
+                arr.push(itemIndex)
+            }
+            
+        })
+        console.log(arr)
+        }
+
+        twoSum2(arr, targ)
+
+
+
+    // Option Solution 3
+
+    var twoSum3 = function(nums, target) {
+
+        var obj = {};
+    
+        for(var i = 0; i < nums.length; i++) {
+    
+            var el = nums[i];
+            obj[el] = i;
+        
+        }
+        // console.log(obj) // {2: 0, 7: 1, 11: 2, 15: 3}
+    
+        for(var j = 0; j < nums.length; j++) {
+    
+            var curItem = target - nums[j];// number to look for in the array 7, 2,-2, -6
+            // var index = nums.indexOf(curItem);
+            
+            //using prototypes
+            if(obj.hasOwnProperty(curItem) && curItem > 0 && obj[curItem] !== j) {
+                
+               return [j, obj[curItem]]
+            } 
+    
+        }
+        
+    }
+    
+    console.log(twoSum3(arr, targ))
+    
