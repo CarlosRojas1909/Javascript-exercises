@@ -22,9 +22,10 @@ This is my 3 loop, I am j:2
 I am b in 2 loop: 2
 This is my 3 loop, I am i:2
 I am b in 3 loop: 3
-
+==========================================================================================
 
 */
+
 // Solution Exercise #1;
 var arr = [2, 7, 11, 15], targ = 9;
 
@@ -111,4 +112,77 @@ var arr = [2, 7, 11, 15], targ = 9;
     }
     
     console.log(twoSum3(arr, targ))
+
+/*
+================================================================================================
+
+// Solution Exercise #2;
+*/    
+        //Option Solution 1:
+        function charCount(str) {
+            var result = {};
+         
+            for (var i = 0; i < str.length; i++) {
+                var char = str[i];
+                if (result[char]) {
+                    result[char]++;
+                } else {
+                    result[char] = 1;
+                }
+            }
+            return result;
+        }
+         
+        charCount("hello"); // {h: 1, e: 1, l: 2, o: 1}
+
     
+        //Option Solution 2:
+        function charCount(str) {
+
+            var obj = {};
+
+            for (var i = 0; i < str.length; i++){
+
+                var char =  str[i].toLowerCase();
+                if (/[a-z0-9]/.test(char)) {
+                    
+                    if (obj[char] > 0) {
+                        obj[char]++
+                    } else{
+                        obj[char] = 1;
+                    }
+                }
+            }
+            return obj;
+        }
+
+        charCount("hello"); //{h: 1, e: 1, l: 2, o: 1}
+
+
+        //Option Solution 2:
+
+        function charCount(str) {
+
+            var obj = {};
+            for (var char of str) {
+                if(isAlphaNumeric(char)) {
+                    char = char.toLowerCase();
+                    obj[char] = ++obj[char] || 1;
+                }
+            }
+            return obj;
+        }
+
+        function isAlphaNumeric(char) {
+
+            var code = char.charCodeAt(0);
+            if (!(code > 47 && code < 58) && //numeic(0-9)
+                !(code > 64 && code < 91) && // upper alpha(A-Z)
+                !(code > 96 && code < 123)) { // lower alpha (a-z)
+
+                    return false;
+                }
+                return true;
+        }
+
+      charCount('hello');

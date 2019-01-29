@@ -9,6 +9,14 @@ return [0, 1].
 ================================================================================================
  Exercise 2:
 
+Write a function which takes in a string and returns counts of each character int he string
+example: charCount('hello')
+
+output: {h:1, e:1, l:2, o:1}
+
+================================================================================================
+ Exercise 3:
+
   Reverse digits of an integer.
   example:
 
@@ -26,10 +34,6 @@ return [0, 1].
         Output: 21
 
 */
-
-
-
-
 
 
 
