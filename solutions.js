@@ -186,3 +186,66 @@ var arr = [2, 7, 11, 15], targ = 9;
         }
 
       charCount('hello');
+
+
+      /*
+================================================================================================
+
+// Solution Exercise #3;
+*/    
+
+
+        // Solution #1
+
+        function reverseInteger(number) {
+            
+            var reversed = number.toString().split("").reverse().join("");
+
+            // console.log(reversed)
+            // console.log(Math.sign(number))
+            // console.log(parseInt(reversed))
+            return Math.sign(number) * parseInt(reversed, 10);
+
+            
+        }
+
+
+        console.log(reverseInteger(-123))
+
+        // Solution #2
+
+        function reversedInput(number){
+            if(number < 0) {
+                  number = Math.sign(number) * number
+            }
+            var rev = 0;
+      
+            while(number !== 0 ) {
+                  
+                  var rev = rev * 10 + number % 10; //take last digit 3, 30+ 2=32, 
+            
+                  number = Math.floor(number / 10)// 123/10= 12.3-->12
+            }
+            return rev
+      }
+      console.log(reversedInput(-124))
+      
+
+/*
+================================================================================================
+
+// Solution Exercise #4;
+*/    
+
+function palindrome (number){
+
+    var result = number.toString().split("").reverse().join("");
+    result = parseInt(result);
+
+    if(number === result) {
+          return true;
+    }
+    return false;
+}
+
+console.log(palindrome(10))
