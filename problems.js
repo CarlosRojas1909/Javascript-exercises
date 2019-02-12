@@ -53,11 +53,40 @@ Input: 10
 Output: false
 Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
+
+
+================================================================================================
+ Exercise 5:   
+
+  Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+Example 1:
+Input: ["flower","flow","flight"]
+Output: "fl"
+
+Example 2:
+Input: ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.    
+
 */
 
+function commonPrefix(arr) {
+
+      var newArr = arr.join("");
+      var count = 0;
+      for(var i = 0; i < newArr.length; i++) {
+          
+            if(newArr[i]) {
+                  
+            }
+      }
 
 
-
+}
+commonPrefix(["flower", "flow", "flight"])
 
 
 
